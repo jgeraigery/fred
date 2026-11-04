@@ -578,8 +578,7 @@
  
      inputEl.addEventListener('keyup', e => {
          if((setting.showPreview === true) && inputEl.value) {
--            preview.src = valueParser(inputEl.value);
-+            preview.src = valueParser(inputEl.value, true);
+             preview.src = valueParser(inputEl.value);
              if (!previewAdded) {
                  labelEl.appendChild(preview);
                  previewAdded = true;
@@ -632,7 +631,8 @@
      labelEl.appendChild(inputWrapper);
  
      if(inputEl.value) {
-         preview.src = valueParser(inputEl.value);
+-        preview.src = valueParser(inputEl.value);
++        preview.src = valueParser(inputEl.value, true);
      }
  
      if ((setting.showPreview === true) && preview.src) {
