@@ -574,8 +574,7 @@
  
      if (setting.mediaSource && (setting.mediaSource !== '')) {
          finderOptions.mediaSource = setting.mediaSource;
--    }
-+preview.src = encodeURI(valueParser(inputEl.value));
+     }
  
      inputEl.addEventListener('keyup', e => {
          if((setting.showPreview === true) && inputEl.value) {
@@ -628,7 +627,8 @@
  
      inputWrapper.appendChild(inputEl);
      inputWrapper.appendChild(openFinderButton);
- 
+-
++preview.src = encodeURI(valueParser(inputEl.value));
      labelEl.appendChild(inputWrapper);
  
      if(inputEl.value) {
