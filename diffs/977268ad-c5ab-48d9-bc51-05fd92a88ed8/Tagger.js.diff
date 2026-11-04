@@ -342,14 +342,12 @@
              this.renderTagInput(tagsWrapper);
          } else {
              this.renderSelectInput(tagsWrapper);
--        }
-+const tagToggle = document.createElement('span');
-+tagToggle.className = 'fred--tagger_tag';
-+tagToggle.appendChild(document.createTextNode(tag));
+         }
      }
  
      renderTag(tag, active = false, onClick = () => {}) {
-         const tagToggle = span('fred--tagger_tag', tag);
+-        const tagToggle = span('fred--tagger_tag', tag);
++        const tagToggle = span('fred--tagger_tag', document.createTextNode(tag));
          tagToggle.setAttribute('data-tag', tag);
  
          if (active) {
