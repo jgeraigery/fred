@@ -1,4 +1,4 @@
-+import escape from 'lodash.escape';
++import { escape } from 'lodash';
  import fredConfig from '../Config';
  
  const setContent = (el, content) => {
@@ -18,12 +18,12 @@
          });    
      } else if ((typeof content === 'object') && (content.innerHTML !== undefined)) {
          el.appendChild(content);
--    } else {
-+    el.innerHTML = escape(content);
+     } else {
          if (fredConfig.lngExists(content)) {
              el.innerHTML = fredConfig.lng(content);
          } else {
-             el.innerHTML = content;
+-            el.innerHTML = content;
++            el.innerHTML = escape(content);
          }
      }
  };
