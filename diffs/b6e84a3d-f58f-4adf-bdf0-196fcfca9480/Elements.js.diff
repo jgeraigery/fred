@@ -1,4 +1,3 @@
-+var escape = require('escape-html');
  import fredConfig from '../Config';
  
  const setContent = (el, content) => {
@@ -12,9 +11,9 @@
                  if (fredConfig.lngExists(contentEl)) {
                      el.innerHTML = fredConfig.lng(contentEl);
                  } else {
-                     el.innerHTML = contentEl;
--                }
-+    el.appendChild(document.createTextNode(content));
+-                    el.innerHTML = contentEl;
++                    el.appendChild(document.createTextNode(contentEl));
+                 }
              }
          });    
      } else if ((typeof content === 'object') && (content.innerHTML !== undefined)) {
