@@ -673,12 +673,12 @@
              el.fredEl = this;
  
              if (el.hasAttribute('data-fred-editable') === false) {
--                el.setAttribute('data-fred-editable', 'true');
-+el.setAttribute('contenteditable', el.getAttribute('data-fred-editable').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+                 el.setAttribute('data-fred-editable', 'true');
              }
  
              if (['i', 'img'].indexOf(el.nodeName.toLowerCase()) === -1) {
-                 el.setAttribute('contenteditable', el.getAttribute('data-fred-editable'));
+-                el.setAttribute('contenteditable', el.getAttribute('data-fred-editable'));
++                el.setAttribute('contenteditable', el.getAttribute('data-fred-editable') === 'true' ? 'true' : 'false');
              }
  
              let rteInitPromise = null;
